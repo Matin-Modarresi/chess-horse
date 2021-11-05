@@ -1,5 +1,5 @@
 import copy 
-import graphviz
+#import graphviz
 import os
 from colorama import Fore
 
@@ -8,12 +8,8 @@ os.system('del test-output /q')
 
 moves = [(-1,2),(1,2),(2,1),(2,-1),(1,-2),(-1,-2),(-2,-1),(-2,1)]
 		  # #	  # #    #   
-			#	  #	   # #    # #
+			#	  #	   # #    
 
-finishing_char = ''
-barrier_x = 0
-barrier_y = 0
-barriers = []
 
 class Node:
 	def __init__(self,x,y,depth):
@@ -39,24 +35,56 @@ class Node:
 		return info
 
 
+def show_output(self,final_leaves,min_obj):
+	k=1
+	color = Fore.WHITE
+	
+
+	for i in final_leaves:
+
+		if i in self.leaves:
+			color = Fore.LIGHTGREEN_EX
+			if min_obj==i:
+				color = Fore.LIGHTRED_EX
+		else: 
+			if min_obj==i:
+				color = Fore.LIGHTRED_EX
+			else:
+				color = Fore.WHITE
+
+
+		
+		print(color +'(x={0:^2d}, y={1:^2d}, f={2:d})'.format(i.x,i.y,i.f_n),end=' '*3)
+
+
+		if i==final_leaves[-1]:
+			print(Fore.WHITE)
+			break
+
+		if k%3==0:
+			print()
+		k+=1
+	print(k)
+	print(Fore.LIGHTMAGENTA_EX+'-'*60,'\n')
+
 
 
 final_leaves=[]
 count = 0
 def move_horse(self):
 	global moves,board,count
-	graph = graphviz.Digraph(comment='The Round Table',node_attr={'shape':'square'},format = 'png')
+	#graph = graphviz.Digraph(comment='The Round Table',node_attr={'shape':'square'},format = 'png')
 	count+=1	
 
 	print(self.get_information())
 
-	graph.node(str(self),self.get_information())
+	#graph.node(str(self),self.get_information())
 	for i in moves:
 		if 8 > self.x+i[0]  >= 0 and 8 > self.y+i[1] >= 0 and i!=self.symmetry and not((self.x+i[0],self.y+i[1]) in barriers): 
 			self.leaves.append(Node(self.x+i[0],self.y+i[1],self.depth+1))
 
-			graph.node(str(self.leaves[-1]),self.leaves[-1].get_information())
-			graph.edge(str(self),str(self.leaves[-1]))
+			#graph.node(str(self.leaves[-1]),self.leaves[-1].get_information())
+			#graph.edge(str(self),str(self.leaves[-1]))
 
 			self.leaves[-1].symmetry = (-i[0],-i[1])
 			self.leaves[-1].parent = self
@@ -82,43 +110,18 @@ def move_horse(self):
 		if i.f_n < min_value:
 			min_value = i.f_n
 			min_obj = i
-		
-	k=1
-	in_leaves = False
-	color = Fore.WHITE
-	
 
-	for i in final_leaves:
+	show_output(self,final_leaves,min_obj)
 
-		if i in self.leaves:
-			color = Fore.LIGHTGREEN_EX
-			if min_obj==i:
-				color = Fore.LIGHTRED_EX
-		else: 
-			if min_obj==i:
-				color = Fore.LIGHTRED_EX
-			else:
-				color = Fore.WHITE
-
-
-		
-		print(color +'(x={0:^2d}, y={1:^2d}, h={2:d})'.format(i.x,i.y,i.f_n),end=' '*3)
-
-
-		if i==final_leaves[-1]:
-			print(Fore.WHITE)
-			break
-
-		if k%3==0:
-			print()
-		k+=1
-	print(k)
-	print(Fore.LIGHTMAGENTA_EX+'-'*60,'\n')
-	Fore.WHITE
-
-	graph.node(str(min_obj),min_obj.get_information(),color = 'red')
+	#graph.node(str(min_obj),min_obj.get_information(),color = 'red')
 	#graph.render('test-output/'+str(count))
 	return move_horse(min_obj)
+
+
+finishing_char = ''
+barrier_x = 0
+barrier_y = 0
+barriers = []
 
 while finishing_char  not in['no','No','n','N']:
 
@@ -141,14 +144,12 @@ final_leaves.append(tree)
 
 last_leaf = move_horse(tree)
 #print(last_leaf.x , last_leaf.y , last_leaf.f_n)
-print(len(final_leaves))
 
-print('\n-------------------------------\n')
 
 goal_path = []
 loop_finish = False
+
 while True:
-	print(last_leaf ,last_leaf.x,last_leaf.y,last_leaf.f_n,last_leaf.depth)
 	goal_path.append(last_leaf)
 	last_leaf = last_leaf.parent
 	if loop_finish:
@@ -156,15 +157,20 @@ while True:
 	if last_leaf.parent == None:
 		loop_finish = True
 
+print(Fore.RED +'\n'+'-'*60)
+print(Fore.CYAN+ 'number of leaves : '+str(len(final_leaves)))
 
-
-Cgraph= graphviz.Digraph(comment='The Round Table',node_attr={'shape':'square'},format = 'pdf')
+print('\nanswer is:')
 for i in goal_path[::-1]:
-	Cgraph.node(str(i),i.get_information(),color = 'red')
-	for j in i.leaves:
-		Cgraph.node(str(j),j.get_information())
-		Cgraph.edge(str(i),str(j))
+	print('(x={0:^2d}, y={1:^2d}, f={2:d})'.format(i.x,i.y,i.f_n))
 
+#Cgraph= graphviz.Digraph(comment='The Round Table',node_attr={'shape':'square'},format = 'pdf')
+#for i in goal_path[::-1]:
+#	Cgraph.node(str(i),i.get_information(),color = 'red')
+#	for j in i.leaves:
+#		Cgraph.node(str(j),j.get_information())
+#		Cgraph.edge(str(i),str(j))
+#
 #Cgraph.render('test-ouput/output')
 #Cgraph.view()
 
