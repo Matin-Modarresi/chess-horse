@@ -1,0 +1,57 @@
+// The Round Table
+digraph {
+	node [shape=square]
+	<__main__.Node object at 0x000001D6C00FC148> [label="(0,0)\n\n depth = 0\nf(n)  =  g(n)  +  h(n)\n7 = 0 + 7\n" color=red]
+	<__main__.Node object at 0x000001D6C0270188> [label="(2,1)\n\n depth = 1\nf(n)  =  g(n)  +  h(n)\n9 = 3 + 6\n"]
+	<__main__.Node object at 0x000001D6C00FC148> -> <__main__.Node object at 0x000001D6C0270188>
+	<__main__.Node object at 0x000001D6C0270188> [label="(2,1)\n\n depth = 1\nf(n)  =  g(n)  +  h(n)\n9 = 3 + 6\n" color=red]
+	<__main__.Node object at 0x000001D6C0270488> [label="(1,3)\n\n depth = 2\nf(n)  =  g(n)  +  h(n)\n12 = 6 + 6\n"]
+	<__main__.Node object at 0x000001D6C0270188> -> <__main__.Node object at 0x000001D6C0270488>
+	<__main__.Node object at 0x000001D6C0270408> [label="(3,3)\n\n depth = 2\nf(n)  =  g(n)  +  h(n)\n10 = 6 + 4\n"]
+	<__main__.Node object at 0x000001D6C0270188> -> <__main__.Node object at 0x000001D6C0270408>
+	<__main__.Node object at 0x000001D6C02702C8> [label="(4,2)\n\n depth = 2\nf(n)  =  g(n)  +  h(n)\n11 = 6 + 5\n"]
+	<__main__.Node object at 0x000001D6C0270188> -> <__main__.Node object at 0x000001D6C02702C8>
+	<__main__.Node object at 0x000001D6C0270388> [label="(4,0)\n\n depth = 2\nf(n)  =  g(n)  +  h(n)\n13 = 6 + 7\n"]
+	<__main__.Node object at 0x000001D6C0270188> -> <__main__.Node object at 0x000001D6C0270388>
+	<__main__.Node object at 0x000001D6C0270348> [label="(0,2)\n\n depth = 2\nf(n)  =  g(n)  +  h(n)\n13 = 6 + 7\n"]
+	<__main__.Node object at 0x000001D6C0270188> -> <__main__.Node object at 0x000001D6C0270348>
+	<__main__.Node object at 0x000001D6C0270488> [label="(1,3)\n\n depth = 2\nf(n)  =  g(n)  +  h(n)\n12 = 6 + 6\n" color=red]
+	<__main__.Node object at 0x000001D6C029C748> [label="(0,5)\n\n depth = 3\nf(n)  =  g(n)  +  h(n)\n16 = 9 + 7\n"]
+	<__main__.Node object at 0x000001D6C0270488> -> <__main__.Node object at 0x000001D6C029C748>
+	<__main__.Node object at 0x000001D6C029C8C8> [label="(3,4)\n\n depth = 3\nf(n)  =  g(n)  +  h(n)\n13 = 9 + 4\n"]
+	<__main__.Node object at 0x000001D6C0270488> -> <__main__.Node object at 0x000001D6C029C8C8>
+	<__main__.Node object at 0x000001D6C029C908> [label="(3,2)\n\n depth = 3\nf(n)  =  g(n)  +  h(n)\n14 = 9 + 5\n"]
+	<__main__.Node object at 0x000001D6C0270488> -> <__main__.Node object at 0x000001D6C029C908>
+	<__main__.Node object at 0x000001D6C029C988> [label="(0,1)\n\n depth = 3\nf(n)  =  g(n)  +  h(n)\n16 = 9 + 7\n"]
+	<__main__.Node object at 0x000001D6C0270488> -> <__main__.Node object at 0x000001D6C029C988>
+	<__main__.Node object at 0x000001D6C029C8C8> [label="(3,4)\n\n depth = 3\nf(n)  =  g(n)  +  h(n)\n13 = 9 + 4\n" color=red]
+	<__main__.Node object at 0x000001D6C02A47C8> [label="(2,6)\n\n depth = 4\nf(n)  =  g(n)  +  h(n)\n17 = 12 + 5\n"]
+	<__main__.Node object at 0x000001D6C029C8C8> -> <__main__.Node object at 0x000001D6C02A47C8>
+	<__main__.Node object at 0x000001D6C02A4888> [label="(4,6)\n\n depth = 4\nf(n)  =  g(n)  +  h(n)\n15 = 12 + 3\n"]
+	<__main__.Node object at 0x000001D6C029C8C8> -> <__main__.Node object at 0x000001D6C02A4888>
+	<__main__.Node object at 0x000001D6C02A4948> [label="(5,5)\n\n depth = 4\nf(n)  =  g(n)  +  h(n)\n14 = 12 + 2\n"]
+	<__main__.Node object at 0x000001D6C029C8C8> -> <__main__.Node object at 0x000001D6C02A4948>
+	<__main__.Node object at 0x000001D6C02A4988> [label="(5,3)\n\n depth = 4\nf(n)  =  g(n)  +  h(n)\n16 = 12 + 4\n"]
+	<__main__.Node object at 0x000001D6C029C8C8> -> <__main__.Node object at 0x000001D6C02A4988>
+	<__main__.Node object at 0x000001D6C02A4848> [label="(4,2)\n\n depth = 4\nf(n)  =  g(n)  +  h(n)\n17 = 12 + 5\n"]
+	<__main__.Node object at 0x000001D6C029C8C8> -> <__main__.Node object at 0x000001D6C02A4848>
+	<__main__.Node object at 0x000001D6C02A4A88> [label="(2,2)\n\n depth = 4\nf(n)  =  g(n)  +  h(n)\n17 = 12 + 5\n"]
+	<__main__.Node object at 0x000001D6C029C8C8> -> <__main__.Node object at 0x000001D6C02A4A88>
+	<__main__.Node object at 0x000001D6C02A4B08> [label="(1,5)\n\n depth = 4\nf(n)  =  g(n)  +  h(n)\n18 = 12 + 6\n"]
+	<__main__.Node object at 0x000001D6C029C8C8> -> <__main__.Node object at 0x000001D6C02A4B08>
+	<__main__.Node object at 0x000001D6C02A4888> [label="(4,6)\n\n depth = 4\nf(n)  =  g(n)  +  h(n)\n15 = 12 + 3\n" color=red]
+	<__main__.Node object at 0x000001D6C04C4248> [label="(6,7)\n\n depth = 5\nf(n)  =  g(n)  +  h(n)\n16 = 15 + 1\n"]
+	<__main__.Node object at 0x000001D6C02A4888> -> <__main__.Node object at 0x000001D6C04C4248>
+	<__main__.Node object at 0x000001D6C04C4308> [label="(6,5)\n\n depth = 5\nf(n)  =  g(n)  +  h(n)\n17 = 15 + 2\n"]
+	<__main__.Node object at 0x000001D6C02A4888> -> <__main__.Node object at 0x000001D6C04C4308>
+	<__main__.Node object at 0x000001D6C04C43C8> [label="(5,4)\n\n depth = 5\nf(n)  =  g(n)  +  h(n)\n18 = 15 + 3\n"]
+	<__main__.Node object at 0x000001D6C02A4888> -> <__main__.Node object at 0x000001D6C04C43C8>
+	<__main__.Node object at 0x000001D6C04C4488> [label="(2,7)\n\n depth = 5\nf(n)  =  g(n)  +  h(n)\n20 = 15 + 5\n"]
+	<__main__.Node object at 0x000001D6C02A4888> -> <__main__.Node object at 0x000001D6C04C4488>
+	<__main__.Node object at 0x000001D6C04C4308> [label="(6,5)\n\n depth = 5\nf(n)  =  g(n)  +  h(n)\n17 = 15 + 2\n" color=red]
+	<__main__.Node object at 0x000001D6C051A488> [label="(5,7)\n\n depth = 6\nf(n)  =  g(n)  +  h(n)\n20 = 18 + 2\n"]
+	<__main__.Node object at 0x000001D6C04C4308> -> <__main__.Node object at 0x000001D6C051A488>
+	<__main__.Node object at 0x000001D6C051A548> [label="(7,7)\n\n depth = 6\nf(n)  =  g(n)  +  h(n)\n18 = 18 + 0\n"]
+	<__main__.Node object at 0x000001D6C04C4308> -> <__main__.Node object at 0x000001D6C051A548>
+	<__main__.Node object at 0x000001D6C051A548> [label="(7,7)\n\n depth = 6\nf(n)  =  g(n)  +  h(n)\n18 = 18 + 0\n" color=red]
+}
